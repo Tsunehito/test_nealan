@@ -8,7 +8,9 @@ var_dump($fileName);
 
 for ($i = 0; $i < 20; $i++)
 {
-  echo 'File name is ' . $fileName[$i] . "\n";
+  $path = "../testTechnique/" . $fileName[$i];
+  echo 'File name is ' . $fileName[$i] .
+        " size : " . filesize($path) ."\n";
 }
 
  ?>
