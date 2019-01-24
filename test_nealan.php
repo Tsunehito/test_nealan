@@ -13,6 +13,28 @@ for ($i = 0; $i < 20; $i++)
 
 // Tri le tableau associciatif par ordre décroissant
 arsort($fileArray);
+
 foreach ($fileArray as $key => $value) {
-  echo "File name [$key] size [$value]\n";
+  $path = "../testTechnique/" . $key;
+  $fp = fopen($path, "r");
+  $checkSimplex = null;
+  // Il chercher string "&l0S". si il y un chaine de caractères = simplex, si c'est null = duplex
+  while(!feof($fp))
+  {
+    $buffer = fgets($fp, 4096);
+    if (strstr($buffer, "&l0S"))
+    {
+      $checkSimplex = $buffer;
+      break;
+    }
+  }
+  fclose($fp);
+
+  if (isset($checkSimplex)):
+    $simplexOrDuplex = "Simplex";
+  else:
+    $simplexOrDuplex = "Duplex";
+  endif;
+
+  echo "File name [$key] size [$value]. This file is ". $simplexOrDuplex ."\n";
 }
