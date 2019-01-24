@@ -1,6 +1,8 @@
 # test_nealan
 For a test
 
+Output :
+
 File name [CVG9.pcl] size [121630]. This file is Simplex
 
 File name [CVG12.pcl] size [121046]. This file is Duplex

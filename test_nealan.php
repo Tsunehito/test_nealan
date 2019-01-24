@@ -18,7 +18,7 @@ foreach ($fileArray as $key => $value) {
   $path = "../testTechnique/" . $key;
   $fp = fopen($path, "r");
   $checkSimplex = null;
-  // Il chercher string "&l0S". si il y un chaine de caractères = simplex, si c'est null = duplex
+  // Il cherche string "&l0S". S'il y un chaine de caractères = simplex, si c'est null = duplex
   while(!feof($fp))
   {
     $buffer = fgets($fp, 4096);
